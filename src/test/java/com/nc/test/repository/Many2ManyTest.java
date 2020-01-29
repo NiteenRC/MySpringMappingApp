@@ -50,7 +50,7 @@ public class Many2ManyTest {
 
 	@Test
 	void testfindByTitleContaining() {
-		List<Course> courses = courseRepository.findByTitleContaining("Machine");
+		List<Course> courses = courseRepository.findByTitleContainingIgnoringCase("Machine");
 		assertTrue(courses.size() >= 1);
 		LOGGER.info("testfindByTitleContaining " + courses.size());
 

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,7 +26,7 @@ public class Course implements Serializable {
 	private int modules;
 	private double fee;
 
-	@ManyToMany(mappedBy = "courses")
+	@ManyToMany(mappedBy = "courses",cascade = CascadeType.ALL)
 	@JsonIgnore
 	private List<Student> students = new ArrayList<>();
 
